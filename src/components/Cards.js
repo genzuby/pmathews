@@ -17,7 +17,7 @@ const CARDGROUP = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-top: 2.5em;
+  margin-top: 1.5em;
   height: 55vh;
 `;
 export default Cards;
