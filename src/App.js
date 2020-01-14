@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { createGlobalStyle } from "styled-components";
+import { Route, BrowserRouter } from "react-router-dom";
+import Home from "./pages/Home";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div data-test="AppComponent">
+      <GlobalStyle />
+      <BrowserRouter>
+        <Route path="/" exact component={Home} />
+      </BrowserRouter>
     </div>
   );
-}
+};
+
+const GlobalStyle = createGlobalStyle`
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
+
+  body {
+    margin : 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  a{
+    text-decoration : none;
+  }
+`;
 
 export default App;
