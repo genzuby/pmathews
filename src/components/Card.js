@@ -3,11 +3,8 @@ import styled from "styled-components";
 
 const Card = ({ imgurl, text, desc }) => {
   return (
-    <CARDBODY>
-      <img src={`./images/${imgurl}`} alt={text} />
-      <CARDTEXT>
-        <h4>{text}</h4>
-      </CARDTEXT>
+    <CARDBODY imgurl={`./images/${imgurl}`}>
+      <CARDTEXT>{text}</CARDTEXT>
     </CARDBODY>
   );
 };
@@ -21,36 +18,34 @@ const CARDBODY = styled.div`
   width: 230px;
   border: 1px solid #ccc;
   box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.2);
-  img {
-    object-fit: cover;
-    height: 80%;
+  background: url(${props => props.imgurl});
+  background-color: rgba(0, 0, 0, 0.3);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &:hover h3 {
+    transform: scale(1.1);
+    bottom: 6px;
+    font-weight: 800;
   }
 `;
 
-const CARDTEXT = styled.div`
-  background: #fff;
-  width: 100%;
-  height: 20%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  border-bottom: 4px solid #a5601c;
-  position: relative;
-
-  &:hover h4 {
-    transform: scale(1.08);
-    top: -3px;
-    transition: 0.25s;
-  }
-
-  h4 {
-    margin: 1em;
-    font-weight: 500;
-    top: 2px;
-    right: 0.5em;
-    position: absolute;
-    cursor: pointer;
-  }
+const CARDTEXT = styled.h3`
+  margin: 1em;
+  font-weight: 500;
+  bottom: 2px;
+  right: 0.5em;
+  color: #fff;
+  position: absolute;
+  transition: all 0.3s ease-out;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 `;
 
 export default Card;

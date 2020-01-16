@@ -1,33 +1,29 @@
 import React from "react";
-// import { createGlobalStyle } from "styled-components";
 import { Route, BrowserRouter } from "react-router-dom";
+import { MenuContextStore } from "./context/MenuStyleContext";
 import Home from "./pages/Home";
+import Aboutme from "./pages/Aboutme";
+import Articles from "./pages/Articles";
+import Books from "./pages/Books";
+import Professional from "./pages/Professional";
 import "./styles/main.scss";
+import Menus from "./components/Menus";
 
 const App = () => {
   return (
     <div data-test="AppComponent">
-      {/* <GlobalStyle /> */}
-      <BrowserRouter>
-        <Route path="/" exact component={Home} />
-      </BrowserRouter>
+      <MenuContextStore>
+        <BrowserRouter>
+          <Menus />
+          <Route path="/" exact component={Home} />
+          <Route path="/aboutme" exact component={Aboutme} />
+          <Route path="/books" exact component={Books} />
+          <Route path="/articles" exact component={Articles} />
+          <Route path="/professional" exact component={Professional} />
+        </BrowserRouter>
+      </MenuContextStore>
     </div>
   );
 };
-
-// const GlobalStyle = createGlobalStyle`
-// @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
-// @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
-
-//   body {
-//     margin : 0;
-//     padding: 0;
-//     font-family: 'Quicksand', sans-serif;
-//   }
-
-//   a{
-//     text-decoration : none;
-//   }
-// `;
 
 export default App;

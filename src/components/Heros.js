@@ -1,13 +1,34 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
+import { TweenLite, Power3 } from "gsap";
 
 const Heros = () => {
+  let nameAni = useRef(null);
+  let titleAni = useRef(null);
+  let uniAni = useRef(null);
+
+  useEffect(() => {
+    TweenLite.from(nameAni, 1.5, { opacity: 0, x: -100, ease: Power3.easeOut });
+    TweenLite.from(titleAni, 1.2, {
+      opacity: 0,
+      y: 10,
+      ease: Power3.easeOut,
+      delay: 0.2
+    });
+    TweenLite.from(uniAni, 1.2, {
+      opacity: 0,
+      y: 30,
+      ease: Power3.easeOut,
+      delay: 0.4
+    });
+  }, []);
+
   return (
     <HEROBODY>
       <HEROTITE>
-        <h1>Peter D. Mathews </h1>
-        <p>Professor of English Literature</p>
-        <p>Hanyang University</p>
+        <h1 ref={el => (nameAni = el)}>Peter D. Mathews </h1>
+        <p ref={el => (titleAni = el)}>Professor of English Literature</p>
+        <p ref={el => (uniAni = el)}>Hanyang University</p>
       </HEROTITE>
     </HEROBODY>
   );
@@ -35,6 +56,7 @@ const HEROTITE = styled.div`
   p {
     margin: 0;
     font-weight: 100;
+    opacity: 1;
   }
 
   h1 {
