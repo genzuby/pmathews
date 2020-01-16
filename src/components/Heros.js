@@ -57,6 +57,7 @@ const HEROTITE = styled.div`
     margin: 0;
     font-weight: 100;
     opacity: 1;
+    top : 0;
   }
 
   h1 {

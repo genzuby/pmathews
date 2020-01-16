@@ -37,6 +37,7 @@ const TOPIMG = styled.img`
   object-fit: cover;
   object-position: 50% 50%;
   z-index: -1;
+  opacity: 1;
 `;
 
 const CONTBODY = styled.div`
