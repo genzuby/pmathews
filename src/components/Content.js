@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import { TweenLite, Power3 } from "gsap";
+import { TweenMax, Power3 } from "gsap";
 import styled from "styled-components";
 import { contentinfo } from "../assets/cardinfo";
 
@@ -10,7 +10,7 @@ const Content = ({ category }) => {
 
   useEffect(() => {
     setContent(...contentinfo.filter(val => val.category === category));
-    TweenLite.from(topImg, 1, {
+    TweenMax.from(topImg, 1, {
       opacity: 0,
       width: 0,
       ease: Power3.easeOut

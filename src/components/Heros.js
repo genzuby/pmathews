@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
-import { TweenLite, Power3 } from "gsap";
+import { TweenMax, Power3 } from "gsap";
 
 const Heros = () => {
   let nameAni = useRef(null);
@@ -8,14 +8,14 @@ const Heros = () => {
   let uniAni = useRef(null);
 
   useEffect(() => {
-    TweenLite.from(nameAni, 1.5, { opacity: 0, x: -100, ease: Power3.easeOut });
-    TweenLite.from(titleAni, 1.2, {
+    TweenMax.from(nameAni, 1.5, { opacity: 0, x: -100, ease: Power3.easeOut });
+    TweenMax.from(titleAni, 1.2, {
       opacity: 0,
       y: 10,
       ease: Power3.easeOut,
       delay: 0.2
     });
-    TweenLite.from(uniAni, 1.2, {
+    TweenMax.from(uniAni, 1.2, {
       opacity: 0,
       y: 30,
       ease: Power3.easeOut,
