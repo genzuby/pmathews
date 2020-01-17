@@ -23,7 +23,7 @@ const Content = ({ category }) => {
       <CONTBODY>
         <h1>{title}</h1>
         <CONTENT>
-          <img src={`./images/${mainimg}`} alt={title} width={category} />
+          <img src={`./images/${mainimg}`} alt={title} />
           <p dangerouslySetInnerHTML={{ __html: desc }} />
         </CONTENT>
       </CONTBODY>
@@ -60,7 +60,7 @@ const CONTENT = styled.div`
   display: flex;
 
   img {
-    width: ${props => (props.width === "books" ? "100%" : "45%")};
+    width: 50%;
     margin: 1em;
   }
 

@@ -16,12 +16,12 @@ export const cardinfo = [
     link: "/books"
   },
   {
-    url: "Articles.png",
+    url: "Articles.jpg",
     text: "Articles",
     link: "/articles"
   },
   {
-    url: "Professional.png",
+    url: "Professional.jpg",
     text: "Professional",
     link: "/professional"
   }
@@ -40,6 +40,22 @@ export const contentinfo = [
     category: "books",
     title: "Books",
     topimg: "booktop.jpg",
+    mainimg: "Books.jpg",
+    desc:
+      "I am currently working on a book project examining the legacy of the French psychoanalyst Jacques Lacan, who has many times been labeled a “charlatan.” This book sets out to assess the validity of that charge.<br><br>In order to keep track of the enormous amount of secondary material, I regularly write reviews about Lacan on <a href='https://www.goodreads.com/review/list/117701?shelf=lacan-project'><Strong style='color:red;'>Goodreads</Strong></a>"
+  },
+  {
+    category: "articles",
+    title: "Articles",
+    topimg: "articletop.jpg",
+    mainimg: "Books.jpg",
+    desc:
+      "I am currently working on a book project examining the legacy of the French psychoanalyst Jacques Lacan, who has many times been labeled a “charlatan.” This book sets out to assess the validity of that charge.<br><br>In order to keep track of the enormous amount of secondary material, I regularly write reviews about Lacan on <a href='https://www.goodreads.com/review/list/117701?shelf=lacan-project'><Strong style='color:red;'>Goodreads</Strong></a>"
+  },
+  {
+    category: "professional",
+    title: "Professional",
+    topimg: "professionaltop.jpg",
     mainimg: "Books.jpg",
     desc:
       "I am currently working on a book project examining the legacy of the French psychoanalyst Jacques Lacan, who has many times been labeled a “charlatan.” This book sets out to assess the validity of that charge.<br><br>In order to keep track of the enormous amount of secondary material, I regularly write reviews about Lacan on <a href='https://www.goodreads.com/review/list/117701?shelf=lacan-project'><Strong style='color:red;'>Goodreads</Strong></a>"

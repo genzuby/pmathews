@@ -1,6 +1,5 @@
 import React from "react";
-import { Route, BrowserRouter } from "react-router-dom";
-import { MenuContextStore } from "./context/MenuStyleContext";
+import { Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Aboutme from "./pages/Aboutme";
 import Articles from "./pages/Articles";
@@ -12,16 +11,12 @@ import Menus from "./components/Menus";
 const App = () => {
   return (
     <div data-test="AppComponent">
-      <MenuContextStore>
-        <BrowserRouter>
-          <Menus />
-          <Route path="/" exact component={Home} />
-          <Route path="/aboutme" exact component={Aboutme} />
-          <Route path="/books" exact component={Books} />
-          <Route path="/articles" exact component={Articles} />
-          <Route path="/professional" exact component={Professional} />
-        </BrowserRouter>
-      </MenuContextStore>
+      <Menus />
+      <Route path="/" exact component={Home} />
+      <Route path="/aboutme" exact component={Aboutme} />
+      <Route path="/books" exact component={Books} />
+      <Route path="/articles" exact component={Articles} />
+      <Route path="/professional" exact component={Professional} />
     </div>
   );
 };

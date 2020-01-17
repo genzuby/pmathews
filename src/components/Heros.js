@@ -39,8 +39,8 @@ const HEROBODY = styled.div`
   height: 45vh;
   color: #fff;
   background: url("./images/heroimg.jpg") no-repeat;
-  background-color: rgba(100, 70, 0, 0.65);
-  background-blend-mode: multiply;
+  /* background-color: rgba(100, 70, 0, 0.65); */
+  /* background-blend-mode: multiply; */
   background-size: cover;
   background-position: 50% 50%;
   display: flex;
@@ -57,7 +57,7 @@ const HEROTITE = styled.div`
     margin: 0;
     font-weight: 100;
     opacity: 1;
-    top : 0;
+    top: 0;
   }
 
   h1 {

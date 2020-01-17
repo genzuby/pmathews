@@ -1,29 +1,18 @@
-import React, { useContext } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { MenuContext } from "../context/MenuStyleContext";
 import { cardinfo } from "../assets/cardinfo";
 
 const Menus = () => {
-  const { color, setColor } = useContext(MenuContext);
-  const setMenuColor = page => {
-    page === "home" ? setColor("#fff") : setColor("#000");
-  };
-
   const renderNavLink = () => {
     return cardinfo.map((val, i) => (
-      <NavLink
-        onClick={() => setMenuColor(val.color)}
-        activeClassName="selectedLink"
-        to={val.link}
-        key={i}
-      >
+      <NavLink activeClassName="selected" to={val.link} key={i} exact>
         <li>{val.text}</li>
       </NavLink>
     ));
   };
 
-  return <MENUBODY color={color}>{renderNavLink()}</MENUBODY>;
+  return <MENUBODY data-test="MenuComponent">{renderNavLink()}</MENUBODY>;
 };
 
 const MENUBODY = styled.ul`
@@ -39,15 +28,11 @@ const MENUBODY = styled.ul`
   right: 0;
 
   li {
-    padding: 0 0.5em 0.9em 0.5em;
+    padding: 0 0.5em 0.6em 0.5em;
     margin: 0 1.2em;
     color: #fff;
     cursor: pointer;
     position: relative;
-
-    .selectedLink {
-      color: #a5601c;
-    }
 
     &:after {
       content: "";
@@ -55,8 +40,8 @@ const MENUBODY = styled.ul`
       top: 100%;
       left: 0;
       width: 0px;
-      height: 3px;
-      background-color: #a5601c;
+      height: 2px;
+      background-color: #b1bbd6;
     }
 
     &:hover:after {
