@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { TweenMax, Power3 } from "gsap";
+import media from "../styles/media";
 
 const Heros = () => {
   let nameAni = useRef(null);
@@ -43,12 +44,20 @@ const HEROBODY = styled.div`
   background-position: 50% 50%;
   display: flex;
   align-items: center;
+
+  ${media.mobile`
+    background-position: right;
+  `}
 `;
 
 const HEROTITE = styled.div`
   font-family: "Libre Baskerville", serif;
   margin-left: 100px;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+
+  ${media.mobile`
+    margin : auto 2em;
+  `}
 
   h1,
   p {
@@ -59,11 +68,11 @@ const HEROTITE = styled.div`
   }
 
   h1 {
-    font-size: 3.6rem;
+    font-size: calc(1.6rem + 2vw);
   }
 
   p {
-    font-size: 1.7rem;
+    font-size: calc(1rem + 0.7vw);
   }
 `;
 

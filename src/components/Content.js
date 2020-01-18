@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { TweenMax, Power3 } from "gsap";
 import styled from "styled-components";
 import { contentinfo } from "../assets/cardinfo";
+import media from "../styles/media";
 
 const Content = ({ category }) => {
   let topImg = useRef(null);
@@ -47,26 +48,58 @@ const CONTBODY = styled.div`
   top: 20%;
   left: 50%;
   width: 70%;
-  height: 100%;
   border: 1px solid #ccc;
   background: #fff;
   transform: translate(-50%, 0);
   padding: 2em 4em;
   margin-bottom: 3em;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+
+  h1 {
+    font-size: calc(1.2rem + 1.5vw);
+  }
+
+  ${media.pad`
+    padding : 1em;
+    clear : both;
+    width : 82%;
+  `}
 `;
 
 const CONTENT = styled.div`
   display: flex;
+  flex-direction: row;
+  padding-bottom: 2em;
+
+  ${media.pad`
+    flex-direction: column;
+  `}
 
   img {
     width: 50%;
     margin: 1em;
+
+    ${media.mobile`
+      width: 80%;
+      display:flex;
+      justify-content : center;
+      align-items:center;
+    `}
   }
 
   p {
     float: right;
     margin: 4em 2em;
+
+    ${media.pad`
+      float :none;
+      margin : 1em 2em;
+    `}
+
+    ${media.mobile`
+      float :none;
+      margin : 1em .5em;
+    `}
   }
 `;
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import media from "../styles/media";
 import Card from "./Card";
 import { cardinfo } from "../assets/cardinfo";
 
@@ -25,5 +26,13 @@ const CARDGROUP = styled.div`
   justify-content: center;
   align-items: center;
   margin: 2em auto;
+  ${media.pad`
+    display : grid;
+    grid: auto-flow dense / repeat(2, 230px);
+    grid-gap : 1em 2em;
+  `}
+  ${media.mobile`
+    display : flex;
+  `}
 `;
 export default Cards;
