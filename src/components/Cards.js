@@ -9,14 +9,14 @@ const Cards = () => {
     return cardinfo.map((val, i) => {
       return (
         val.text !== "Home" && (
-          <Link key={i} to={val.link}>
+          <Link data-test="CardLink" key={i} to={val.link}>
             <Card imgurl={val.url} text={val.text} desc={val.desc} />
           </Link>
         )
       );
     });
   };
-  return <CARDGROUP>{renderCards()}</CARDGROUP>;
+  return <CARDGROUP data-test="CardsComponent">{renderCards()}</CARDGROUP>;
 };
 
 const CARDGROUP = styled.div`

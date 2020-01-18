@@ -6,7 +6,13 @@ import { cardinfo } from "../assets/cardinfo";
 const Menus = () => {
   const renderNavLink = () => {
     return cardinfo.map((val, i) => (
-      <NavLink activeClassName="selected" to={val.link} key={i} exact>
+      <NavLink
+        data-test="NavLink"
+        activeClassName="selected"
+        to={val.link}
+        key={i}
+        exact
+      >
         <li>{val.text}</li>
       </NavLink>
     ));

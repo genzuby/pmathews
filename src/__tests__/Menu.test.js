@@ -14,4 +14,9 @@ describe("Menu Component", () => {
     const component = wrapper.find("[data-test='MenuComponent']");
     expect(component.length).toBe(1);
   });
+
+  it("Should render 5 links", () => {
+    const component = wrapper.find("[data-test='NavLink']");
+    expect(component.length).toBe(5);
+  });
 });

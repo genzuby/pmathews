@@ -26,7 +26,7 @@ const Heros = () => {
   return (
     <HEROBODY>
       <HEROTITE>
-        <h1 ref={el => (nameAni = el)}>Peter D. Mathews </h1>
+        <h1 ref={el => (nameAni = el)}>Peter D. Mathews</h1>
         <p ref={el => (titleAni = el)}>Professor of English Literature</p>
         <p ref={el => (uniAni = el)}>Hanyang University</p>
       </HEROTITE>
@@ -39,8 +39,6 @@ const HEROBODY = styled.div`
   height: 45vh;
   color: #fff;
   background: url("./images/heroimg.jpg") no-repeat;
-  /* background-color: rgba(100, 70, 0, 0.65); */
-  /* background-blend-mode: multiply; */
   background-size: cover;
   background-position: 50% 50%;
   display: flex;
