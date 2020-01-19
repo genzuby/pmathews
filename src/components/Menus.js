@@ -26,11 +26,11 @@ const Menus = () => {
     setMenuColor(!menuOpen ? "#969696" : "#fff");
   };
 
-  const renderNavLink = () => {
+  const renderNavLink = activeClass => {
     return cardinfo.map((val, i) => (
       <NavLink
         data-test="NavLink"
-        activeClassName={menuOpen ? "selectedmobile" : "selected"}
+        activeClassName={activeClass}
         onClick={onHandleMobileMenu}
         to={val.link}
         key={i}
@@ -43,7 +43,7 @@ const Menus = () => {
 
   return (
     <div data-test="MenuComponent">
-      <MENUBODY>{renderNavLink()}</MENUBODY>
+      <MENUBODY>{renderNavLink("selected")}</MENUBODY>
       <MENUBODYMOBILE>
         <i
           className="fas fa-bars"
@@ -52,7 +52,7 @@ const Menus = () => {
           title="Menu"
         ></i>
         <MENULIST ref={el => (mobileMenu = el)} open={menuOpen}>
-          {renderNavLink()}
+          {renderNavLink("selectedmobile")}
         </MENULIST>
       </MENUBODYMOBILE>
     </div>

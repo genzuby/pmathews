@@ -3,6 +3,8 @@ import { TweenMax, Power3 } from "gsap";
 import styled from "styled-components";
 import { contentinfo } from "../assets/cardinfo";
 import media from "../styles/media";
+import Pages from "./Pages";
+import Tables from "./Tables";
 
 const Content = ({ category }) => {
   let topImg = useRef(null);
@@ -18,17 +20,22 @@ const Content = ({ category }) => {
     });
   }, [category, setContent]);
 
+  const renderContent = () => {
+    return category === "articles" ? (
+      <Tables />
+    ) : (
+      <Pages title={title} mainimg={mainimg} desc={desc} />
+    );
+  };
+
   return (
-    <div>
+    <>
       <TOPIMG ref={el => (topImg = el)} src={`./images/${topimg}`} />
       <CONTBODY>
         <h1>{title}</h1>
-        <CONTENT>
-          <img src={`./images/${mainimg}`} alt={title} />
-          <p dangerouslySetInnerHTML={{ __html: desc }} />
-        </CONTENT>
+        {renderContent()}
       </CONTBODY>
-    </div>
+    </>
   );
 };
 
@@ -57,6 +64,7 @@ const CONTBODY = styled.div`
 
   h1 {
     font-size: calc(1.2rem + 1.5vw);
+    padding: 0 1em;
   }
 
   ${media.pad`
@@ -64,43 +72,6 @@ const CONTBODY = styled.div`
     clear : both;
     width : 82%;
   `}
-`;
-
-const CONTENT = styled.div`
-  display: flex;
-  flex-direction: row;
-  padding-bottom: 2em;
-
-  ${media.pad`
-    flex-direction: column;
-  `}
-
-  img {
-    width: 50%;
-    margin: 1em;
-
-    ${media.mobile`
-      width: 80%;
-      display:flex;
-      justify-content : center;
-      align-items:center;
-    `}
-  }
-
-  p {
-    float: right;
-    margin: 4em 2em;
-
-    ${media.pad`
-      float :none;
-      margin : 1em 2em;
-    `}
-
-    ${media.mobile`
-      float :none;
-      margin : 1em .5em;
-    `}
-  }
 `;
 
 export default Content;
