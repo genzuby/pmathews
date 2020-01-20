@@ -5,7 +5,7 @@ import media from "../styles/media";
 const Pages = ({ mainimg, title, desc }) => {
   return (
     <CONTENT>
-      <img src={`./images/${mainimg}`} alt={title} />
+      {mainimg && <img src={`./images/${mainimg}`} alt={title} />}
       <p dangerouslySetInnerHTML={{ __html: desc }} />
     </CONTENT>
   );
