@@ -47,6 +47,12 @@ const Tables = () => {
               {idx === openid && (
                 <TABLEDESC>
                   <p dangerouslySetInnerHTML={{ __html: item.desc }} />
+                  <a
+                    href={`./pdfs/${i === 0 ? "A" : "B"}${idx + 1}.pdf`}
+                    target="_blank"
+                  >
+                    <p className="pdflink">Download the PDF</p>
+                  </a>
                 </TABLEDESC>
               )}
             </div>
@@ -157,6 +163,12 @@ const TABLEDESC = styled.div`
   animation-duration: 0.36s;
   animation-delay: now;
   animation-name: anidetail;
+
+  .pdflink {
+    margin: 0;
+    padding-top: 1em;
+    font-weight: 600;
+  }
 
   @keyframes anidetail {
     0% {
