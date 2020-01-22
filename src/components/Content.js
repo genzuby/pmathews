@@ -73,11 +73,31 @@ const CONTBODY = styled.div`
     animation-duration: 1s;
     animation-delay: now;
     animation-name: anibar;
+
+    ${media.pad`
+      left : 2em;
+      height: 85px;
+    `}
+
+    ${media.mobile`
+      left : 0;
+      top : 0;
+      width : 100%;
+      height : 3px;
+      animation-name: anibarmobile;
+    `}
   }
 
   @keyframes anibar {
     0% {
       height: 0;
+      opacity: 1;
+    }
+  }
+
+  @keyframes anibarmobile {
+    0% {
+      width: 0;
       opacity: 1;
     }
   }
