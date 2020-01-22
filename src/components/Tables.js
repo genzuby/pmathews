@@ -52,7 +52,10 @@ const Tables = () => {
                       href={`./pdfs/${i === 0 ? "A" : "B"}${idx + 1}.pdf`}
                       target="_blank"
                     >
-                      <p className="pdflink">Download the PDF</p>
+                      <div className="pdfdown">
+                        <p className="pdflink">Download</p>
+                        <i className="far fa-file-pdf" />
+                      </div>
                     </a>
                   )}
                 </TABLEDESC>
@@ -74,7 +77,7 @@ const TABLEBODY = styled.div`
   h3 {
     padding: 0.8em 0 0.5em 2em;
     margin: 0;
-    background: #ccc;
+    background: #e4dac3;
     width: calc(100% - 2em + 1px);
     border-top-left-radius: 26px;
 
@@ -115,7 +118,7 @@ const TABLEIMG = styled.div`
   img {
     width: 80px;
     height: 110px;
-    object-fit: cover;
+    object-fit: contain;
     object-position: 50% 50%;
 
     ${media.mobile`
@@ -125,7 +128,7 @@ const TABLEIMG = styled.div`
 `;
 
 const TABLEINFO = styled.div`
-  padding: 1em;
+  padding: 1em 1em 0.7em 1em;
 
   h4,
   p,
@@ -145,20 +148,20 @@ const TABLEINFO = styled.div`
 
   a {
     font-weight: 600;
-    color: #775ada;
+    color: #67aee4;
   }
 
   div {
-    margin-top: 1.2em;
-    font-size: 1.05rem;
-    color: #ff304f;
+    margin-top: 1.6rem;
+    font-size: 1rem;
+    color: #ff4d00;
     cursor: pointer;
   }
 `;
 
 const TABLEDESC = styled.div`
   margin: 0;
-  padding: 2em;
+  padding: 2em 3em;
   border: 1px solid #ccc;
   background: #f5f5f5;
   border-top: none;
@@ -166,10 +169,26 @@ const TABLEDESC = styled.div`
   animation-delay: now;
   animation-name: anidetail;
 
-  .pdflink {
+  p {
+    text-align: justify;
+  }
+
+  .pdfdown {
+    display: flex;
+    align-items: center;
     margin: 0;
-    padding-top: 1em;
-    font-weight: 600;
+
+    .pdflink {
+      font-weight: 600;
+      font-size: 0.97rem;
+      padding: 0 0.2em;
+    }
+
+    i {
+      color: red;
+      font-size: 1.4rem;
+      padding: 0 0.2em;
+    }
   }
 
   @keyframes anidetail {

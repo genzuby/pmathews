@@ -47,6 +47,11 @@ describe("App Components", () => {
     });
   });
 
+  it("Should render correctly", () => {
+    setWrapper("/");
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it("Should render without error", () => {
     setWrapper("/");
     const component = wrapper.find(`[data-test='AppComponent']`);

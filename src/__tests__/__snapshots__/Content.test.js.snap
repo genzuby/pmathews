@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content Component About Me Content Should render correctly 1`] = `ReactWrapper {}`;
+
+exports[`Content Component Articles Content Should render correctly 1`] = `ReactWrapper {}`;
+
+exports[`Content Component Books Content Should render correctly 1`] = `ReactWrapper {}`;
+
+exports[`Content Component Professional Content Should render correctly 1`] = `ReactWrapper {}`;

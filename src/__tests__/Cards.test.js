@@ -10,6 +10,10 @@ describe("Cards Components", () => {
     wrapper = shallow(<Cards />);
   });
 
+  it("Should render correctly", () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it("Should render Cards component without error", () => {
     const component = wrapper.find("[data-test='CardsComponent']");
     expect(component.length).toBe(1);

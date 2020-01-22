@@ -34,7 +34,8 @@ const CONTENT = styled.div`
 
   p {
     float: right;
-    margin: 4em 2em;
+    margin: 2em 3em;
+    text-align: justify;
 
     ${media.pad`
       float :none;

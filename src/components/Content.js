@@ -29,13 +29,13 @@ const Content = ({ category }) => {
   };
 
   return (
-    <>
+    <div data-test="ContentComponent">
       <TOPIMG ref={el => (topImg = el)} src={`./images/${topimg}`} />
       <CONTBODY>
         <h1>{title}</h1>
         {renderContent()}
       </CONTBODY>
-    </>
+    </div>
   );
 };
 
@@ -61,6 +61,26 @@ const CONTBODY = styled.div`
   padding: 2em 4em;
   margin-bottom: 3em;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    height: 110px;
+    width: 3px;
+    left: 5em;
+    background: #ff4d00;
+    animation-duration: 1s;
+    animation-delay: now;
+    animation-name: anibar;
+  }
+
+  @keyframes anibar {
+    0% {
+      height: 0;
+      opacity: 1;
+    }
+  }
 
   h1 {
     font-size: calc(1.2rem + 1.5vw);

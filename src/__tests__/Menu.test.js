@@ -10,6 +10,12 @@ describe("Menu Component", () => {
     wrapper = shallow(<Menus />);
   });
 
+  afterEach(() => {});
+
+  it("Should render correctly", () => {
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it("Should render without errors", () => {
     const component = wrapper.find("[data-test='MenuComponent']");
     expect(component.length).toBe(1);
