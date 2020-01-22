@@ -51,11 +51,10 @@ const Tables = () => {
                     <a
                       href={`./pdfs/${i === 0 ? "A" : "B"}${idx + 1}.pdf`}
                       target="_blank"
+                      className="pdfdown"
                     >
-                      <div className="pdfdown">
-                        <p className="pdflink">Download</p>
-                        <i className="far fa-file-pdf" />
-                      </div>
+                      <p className="pdflink">Download</p>
+                      <i className="far fa-file-pdf" />
                     </a>
                   )}
                 </TABLEDESC>
@@ -135,20 +134,22 @@ const TABLEINFO = styled.div`
   a {
     margin: 0;
     padding: 0.1em 0;
-    width: 95%;
   }
 
   h4 {
     font-size: 1.2rem;
+    width: 95%;
   }
 
   p {
     word-wrap: break-word;
+    width: 95%;
   }
 
   a {
     font-weight: 600;
     color: #67aee4;
+    padding-right: 0.2em;
   }
 
   div {
@@ -177,6 +178,7 @@ const TABLEDESC = styled.div`
     display: flex;
     align-items: center;
     margin: 0;
+    padding: 0;
 
     .pdflink {
       font-weight: 600;
