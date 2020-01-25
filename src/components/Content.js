@@ -5,6 +5,7 @@ import { contentinfo } from "../assets/cardinfo";
 import media from "../styles/media";
 import Pages from "./Pages";
 import Tables from "./Tables";
+import GoToTop from "./GoToTop";
 
 const Content = ({ category }) => {
   let topImg = useRef(null);
@@ -35,6 +36,7 @@ const Content = ({ category }) => {
         <h1>{title}</h1>
         {renderContent()}
       </CONTBODY>
+      <GoToTop />
     </div>
   );
 };
@@ -75,16 +77,8 @@ const CONTBODY = styled.div`
     animation-name: anibar;
 
     ${media.pad`
-      left : 2em;
+      left : 2.5em;
       height: 85px;
-    `}
-
-    ${media.mobile`
-      left : 0;
-      top : 0;
-      width : 100%;
-      height : 3px;
-      animation-name: anibarmobile;
     `}
   }
 
@@ -95,16 +89,17 @@ const CONTBODY = styled.div`
     }
   }
 
-  @keyframes anibarmobile {
-    0% {
-      width: 0;
-      opacity: 1;
-    }
-  }
-
   h1 {
     font-size: calc(1.2rem + 1.5vw);
     padding: 0 1em;
+
+    ${media.pad`
+      padding : 0 2em;
+    `}
+
+    ${media.pad`
+      padding : 0 1.5em;
+    `}
   }
 
   ${media.pad`

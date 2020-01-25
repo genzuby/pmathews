@@ -141,6 +141,7 @@ const MENULIST = styled.ul`
     padding: 1em;
     border-bottom: 1px dashed #ccc;
     width: 70%;
+
     li {
       cursor: pointer;
     }

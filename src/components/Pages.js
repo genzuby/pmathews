@@ -12,29 +12,37 @@ const Pages = ({ mainimg, title, desc }) => {
 };
 
 const CONTENT = styled.div`
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
   padding-bottom: 2em;
 
   ${media.pad`
+    display: flex;
     flex-direction: column;
   `}
 
   img {
-    width: 50%;
-    margin: 1em;
+    width: 35%;
+    height: 100%;
+    margin: 1em 3em 2em 1em;
+    object-fit: cover;
+    float: left;
+
+    ${media.pad`
+      margin : 1.5em 3em;
+    `}
 
     ${media.mobile`
       width: 80%;
       display:flex;
       justify-content : center;
       align-items:center;
+      margin : 1.5em auto;
     `}
   }
 
   p {
-    float: right;
-    margin: 2em 3em;
+    margin: 2em;
     text-align: justify;
 
     ${media.pad`
@@ -44,7 +52,8 @@ const CONTENT = styled.div`
 
     ${media.mobile`
       float :none;
-      margin : 1em .5em;
+      margin : 1.5em ;
+      text-align: left;
     `}
   }
 `;

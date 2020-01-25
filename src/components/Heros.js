@@ -45,7 +45,7 @@ const HEROBODY = styled.div`
   display: flex;
   align-items: center;
 
-  ${media.mobile`
+  ${media.pad`
     background-position: right;
   `}
 `;
