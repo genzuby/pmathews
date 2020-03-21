@@ -22,7 +22,7 @@ describe("Menu Component", () => {
   });
 
   it("Should render 5 links", () => {
-    const component = wrapper.find("[data-test='NavLink']");
+    const component = wrapper.find("[data-test='NavLinkTest']");
     expect(component.length).toBe(5);
   });
 });

@@ -29,7 +29,7 @@ const Menus = () => {
   const renderNavLink = activeClass => {
     return cardinfo.map((val, i) => (
       <NavLink
-        data-test="NavLink"
+        data-test="NavLinkTest"
         activeClassName={activeClass}
         onClick={onHandleMobileMenu}
         to={val.link}
