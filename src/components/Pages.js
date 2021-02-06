@@ -11,7 +11,7 @@ const Pages = ({ mainimg, title, desc }) => {
   );
 };
 
-const CONTENT = styled.div`
+const CONTENT = styled.section`
   /* display: flex;
   flex-direction: row; */
   padding-bottom: 2em;

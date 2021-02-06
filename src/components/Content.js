@@ -1,32 +1,39 @@
-import React, { useRef, useState, useEffect } from "react";
-import { TweenMax, Power3 } from "gsap";
-import styled from "styled-components";
-import { contentinfo } from "../assets/cardinfo";
-import media from "../styles/media";
-import Pages from "./Pages";
-import Tables from "./Tables";
-import GoToTop from "./GoToTop";
+import React, { useRef, useState, useEffect } from 'react';
+import { TweenMax, Power3 } from 'gsap';
+import styled from 'styled-components';
+import { contentinfo } from '../assets/cardinfo';
+import media from '../styles/media';
+import Pages from './Pages';
+import Tables from './Tables';
+import GoToTop from './GoToTop';
 
 const Content = ({ category }) => {
   let topImg = useRef(null);
   const [content, setContent] = useState({});
-  const { title, topimg, mainimg, desc } = content;
+  const { title, topimg, contents } = content;
 
   useEffect(() => {
     setContent(...contentinfo.filter(val => val.category === category));
     TweenMax.from(topImg, 1, {
       opacity: 0,
       width: 0,
-      ease: Power3.easeOut
+      ease: Power3.easeOut,
     });
   }, [category, setContent]);
 
   const renderContent = () => {
-    return category === "articles" ? (
+    return category === 'articles' ? (
       <Tables />
-    ) : (
-      <Pages title={title} mainimg={mainimg} desc={desc} />
-    );
+    ) : contents ? (
+      contents.map(content => (
+        <Pages
+          key={content.mainimg}
+          title={title}
+          mainimg={content.mainimg}
+          desc={content.desc}
+        />
+      ))
+    ) : null;
   };
 
   return (
@@ -65,7 +72,7 @@ const CONTBODY = styled.div`
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     height: 110px;

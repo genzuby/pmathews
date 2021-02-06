@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React, { useState } from "react";
-import styled from "styled-components";
-import media from "../styles/media";
-import { articlesInfo } from "../assets/articlesInfo";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import media from '../styles/media';
+import { articlesInfo } from '../assets/articlesInfo';
 
 const Tables = () => {
   const [openid, setOpenid] = useState(null);
@@ -13,7 +13,7 @@ const Tables = () => {
 
   const renderList = () => {
     return articlesInfo.map((val, i) => (
-      <TABLEBODY key={i}>
+      <TABLEBODY key={val.category}>
         <h3>{val.category}</h3>
         <div className="bodymain">
           {val.info.map((item, idx) => (
@@ -21,8 +21,7 @@ const Tables = () => {
               <TABLEITEMS>
                 <TABLEIMG>
                   <img
-                    src={`./images/articles/${i === 0 ? "A" : "B"}${idx +
-                      1}.jpg`}
+                    src={`./images/articles/${item.image}`}
                     alt={item.title}
                   />
                 </TABLEIMG>
@@ -49,7 +48,7 @@ const Tables = () => {
                   <p dangerouslySetInnerHTML={{ __html: item.desc }} />
                   {!item.pdf && (
                     <a
-                      href={`./pdfs/${i === 0 ? "A" : "B"}${idx + 1}.pdf`}
+                      href={`./pdfs/${item.image.split('.')[0]}.pdf`}
                       target="_blank"
                       className="pdfdown"
                     >
